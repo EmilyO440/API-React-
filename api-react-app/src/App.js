@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>CRUD App</h1>
+        <h1>University of Texas</h1>
       </header>
       <div className="container">
         <Home />

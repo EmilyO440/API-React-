@@ -40,6 +40,20 @@ function EditItem({ id, setEditing }) {
     }
   };
 
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`https://65c96a7f3b05d29307de8f16.mockapi.io/locations/${id}`, {
+        method: 'DELETE',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete user');
+      }
+      setEditing(null); // Reset the editing state
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   return (
     <div className="edit-form">
       <h3>Edit User</h3>
@@ -53,11 +67,11 @@ function EditItem({ id, setEditing }) {
           required
         />
         <button type="submit">Save</button>
-        <button onClick={() => setEditing(null)}>Cancel</button>
       </form>
+      <button onClick={handleDelete}>Delete</button> {/* Moved the Delete button outside of the form */}
+      <button onClick={() => setEditing(null)}>Cancel</button>
     </div>
   );
 }
 
 export default EditItem;
-
