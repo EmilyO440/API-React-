@@ -1,0 +1,44 @@
+/* App.css */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.container {
+  margin: 20px auto;
+}
+
+.list-container {
+  margin-top: 20px;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.list-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.add-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+
