@@ -7,6 +7,7 @@ function Home() {
   const [items, setItems] = useState([]);
   const [adding, setAdding] = useState(false);
   const [editing, setEditing] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +19,7 @@ function Home() {
         const data = await response.json();
         setItems(data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        setError(error.message);
       }
     };
     fetchData();
@@ -34,7 +35,8 @@ function Home() {
 
   return (
     <div>
-      <h2>Users</h2>
+      <h2>Developers</h2>
+      {error && <p>Error fetching data: {error}</p>}
       <div className="list-container">
         {items.map(item => (
           <div className="list-item" key={item.id}>

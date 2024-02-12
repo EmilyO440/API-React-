@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Developers</h1>
+        <h1>CRUD App</h1>
       </header>
       <div className="container">
         <Home />
@@ -17,5 +17,3 @@ function App() {
 }
 
 export default App;
-
-
