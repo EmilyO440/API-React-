@@ -5,7 +5,7 @@ function EditItem({ id, setEditing }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch the user data to pre-fill the form
+
     const fetchData = async () => {
       try {
         const response = await fetch(`https://65c96a7f3b05d29307de8f16.mockapi.io/locations/${id}`);
@@ -34,7 +34,7 @@ function EditItem({ id, setEditing }) {
       if (!response.ok) {
         throw new Error('Failed to update user');
       }
-      setEditing(null); // Reset the editing state
+      setEditing(null); 
     } catch (error) {
       setError(error.message);
     }
@@ -48,7 +48,7 @@ function EditItem({ id, setEditing }) {
       if (!response.ok) {
         throw new Error('Failed to delete user');
       }
-      setEditing(null); // Reset the editing state
+      setEditing(null); 
     } catch (error) {
       setError(error.message);
     }
@@ -68,7 +68,9 @@ function EditItem({ id, setEditing }) {
         />
         <button type="submit">Save</button>
       </form>
-      <button onClick={handleDelete}>Delete</button> {/* Moved the Delete button outside of the form */}
+      <button onClick={handleDelete}>Delete</button> 
+      
+
       <button onClick={() => setEditing(null)}>Cancel</button>
     </div>
   );
